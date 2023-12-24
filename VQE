@@ -1,0 +1,18 @@
+from qiskit.algorithms.optimizers import OptimizerResult
+ 
+def my_minimizer(fun, x0, jac=None, bounds=None) -> OptimizerResult:
+    # Note that the callable *must* have these argument names!
+    # Args:
+    #     fun (callable): the function to minimize
+    #     x0 (np.ndarray): the initial point for the optimization
+    #     jac (callable, optional): the gradient of the objective function
+    #     bounds (list, optional): a list of tuples specifying the parameter bounds
+ 
+    result = OptimizerResult()
+    result.x = # optimal parameters
+    result.fun = # optimal function value
+    return result
+from functools import partial
+from scipy.optimize import minimize
+ 
+optimizer = partial(minimize, method="L-BFGS-B")
